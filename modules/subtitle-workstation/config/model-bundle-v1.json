@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "tag": "models-v1",
+  "archive": "listening-models-v1.zip",
+  "archive_bytes": 3472795564,
+  "archive_sha256": "fcf7b05f6884b2b7083e57957051d701cd43212d840b178a63a496980a8f48a8",
+  "parts": [
+    {
+      "name": "listening-models-v1.zip.001",
+      "bytes": 1073741824,
+      "sha256": "c1ce78782defda329c1b243d28b67b5dae25366556d524a35d67a245b13da0ec"
+    },
+    {
+      "name": "listening-models-v1.zip.002",
+      "bytes": 1073741824,
+      "sha256": "2f0cb9cfb4914ca3d05f947cc709e4604d3c20ff841d3f4c14d462a765aaf546"
+    },
+    {
+      "name": "listening-models-v1.zip.003",
+      "bytes": 1073741824,
+      "sha256": "826778f155610b9447a7901ac0ee48db70e345abe64a23110baa5cee8969c5f9"
+    },
+    {
+      "name": "listening-models-v1.zip.004",
+      "bytes": 251570092,
+      "sha256": "eed662a65bd6fc84689df2287de66962c37db6f97347a0054d24bf810a96eb5d"
+    }
+  ],
+  "files": [
+    {
+      "path": "models/asr/faster-whisper-large-v3/README.md",
+      "bytes": 2052,
+      "sha256": "39e96252229f5a3d0141dc81afb65a36fd205461ac21e5b70f2cd1248ef0082c"
+    },
+    {
+      "path": "models/asr/faster-whisper-large-v3/config.json",
+      "bytes": 2394,
+      "sha256": "a9306624f5ec14270a014b647e5c316b6e03a662c369758d1b90697a7b0655b9"
+    },
+    {
+      "path": "models/asr/faster-whisper-large-v3/model.bin",
+      "bytes": 3087284237,
+      "sha256": "69f74147e3334731bc3a76048724833325d2ec74642fb52620eda87352e3d4f1"
+    },
+    {
+      "path": "models/asr/faster-whisper-large-v3/preprocessor_config.json",
+      "bytes": 340,
+      "sha256": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711"
+    },
+    {
+      "path": "models/asr/faster-whisper-large-v3/tokenizer.json",
+      "bytes": 2480617,
+      "sha256": "6d8cbd7cd0d8d5815e478dac67b85a26bbe77c1f5e0c6d76d1ce2abc0e5f21ca"
+    },
+    {
+      "path": "models/asr/faster-whisper-large-v3/vocabulary.json",
+      "bytes": 1068114,
+      "sha256": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+    },
+    {
+      "path": "models/alignment/wav2vec2-base-960h/README.md",
+      "bytes": 4431,
+      "sha256": "fc52a0adfa64e446800f9944c6cf9b90da3127aba548860ea5714516ec8c18c7"
+    },
+    {
+      "path": "models/alignment/wav2vec2-base-960h/config.json",
+      "bytes": 1596,
+      "sha256": "d3ec255c063d9f95057b553b19c20135b259875834a4fe9deb218a6be25b4cf3"
+    },
+    {
+      "path": "models/alignment/wav2vec2-base-960h/feature_extractor_config.json",
+      "bytes": 158,
+      "sha256": "d3de0c797bf9b65f90bc65c30cb7b303ebeda341f6fc80af33628c4b26b95632"
+    },
+    {
+      "path": "models/alignment/wav2vec2-base-960h/model.safetensors",
+      "bytes": 377607901,
+      "sha256": "8aa76ab2243c81747a1f832954586bc566090c83a0ac167df6f31f0fa917d74a"
+    },
+    {
+      "path": "models/alignment/wav2vec2-base-960h/preprocessor_config.json",
+      "bytes": 159,
+      "sha256": "b225d617c025463b9e157e06afea8b90dc7078fc70b013c533328423e0486b4a"
+    },
+    {
+      "path": "models/alignment/wav2vec2-base-960h/special_tokens_map.json",
+      "bytes": 85,
+      "sha256": "bb7068de1150661a10b55f9e4b12a0e77af8bf91f5e45e1b58afaf1d0e17f675"
+    },
+    {
+      "path": "models/alignment/wav2vec2-base-960h/tokenizer_config.json",
+      "bytes": 163,
+      "sha256": "dc790594f5bc351a4311c6624f40acd95850d4aaf2a5cb3c656c9b610720b608"
+    },
+    {
+      "path": "models/alignment/wav2vec2-base-960h/vocab.json",
+      "bytes": 291,
+      "sha256": "19727f8944fe6459fc3f240ae2c198395b740f6a029bd23e06656266b83bcf64"
+    },
+    {
+      "path": "models/resources/punkt_tab.zip",
+      "bytes": 4319076,
+      "sha256": "e57f64187974277726a3417ca6f181ec5403676c717672eef6a748a7b20e0106"
+    },
+    {
+      "path": "models/resources/punkt_tab.xml",
+      "bytes": 313,
+      "sha256": "d8ad712174bbd31a3c1dc424d92d232919e5453c7e520616affbcce4b66e3401"
+    }
+  ],
+  "models": [
+    {
+      "repo_id": "Systran/faster-whisper-large-v3",
+      "revision": "edaa852ec7e145841d8ffdb056a99866b5f0a478",
+      "license": "mit"
+    },
+    {
+      "repo_id": "facebook/wav2vec2-base-960h",
+      "revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+      "license": "apache-2.0"
+    }
+  ]
+}

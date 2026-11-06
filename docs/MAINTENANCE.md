@@ -21,3 +21,7 @@
 ## 提交与发布
 
 不提交 jobs/ui/cache/envs/models/runtime/temp、日志、个人设置、真实课堂包、秘密或完整题库。提交前运行 tools/audit-release.py，并检查 docs/source-manifest.json 与 Git 最终文件清单。模型/运行时下载和开源代码发布是不同操作；更新固定版本需核对上游与重新验证。修改品牌或美术素材前先读 ASSETS-LICENSE.md。
+
+## 固定模型发行附件
+
+models-v1 是独立于代码 Git 历史的固定模型发行包。发布时必须检查原模型锁中的全部文件，排除 .cache/lock/下载元数据，只打包所需权重、模型配置、分词文件、英文断句资源和许可。修改模型内容或分卷字节后应使用新模型包版本和新 manifest，不覆盖旧版本附件。仓库 config/model-bundle-v1.json 是安装器信任的校验清单，必须与已发布的附件一致。

@@ -1,5 +1,17 @@
 # 英语听力训练专用播放器
 
+## 让你的本地 Agent 帮你部署
+
+将下面这一句话发送给你电脑上**能读取文件、运行终端的本地编程 Agent**（例如 Codex、Claude Code 或 Cline）：
+
+> 请将 https://github.com/Arikimizord/english-listening-local-trainer 克隆到我选择的本地目录，先阅读根目录 AGENTS.md 和两个模块的 README；检查 Windows x64、NVIDIA GPU、驱动与磁盘条件，符合条件后按 docs/INSTALL.md 运行 setup.ps1，下载并校验本仓库 models-v1 Release 的固定模型分卷，完成 doctor 检查并打开字幕工作站，同时告诉我离线播放器 EXE 在哪里；只在项目目录安装，不升级固定依赖、不上传我的音频，遇到条件不符或校验失败请停止并说明。
+
+这是一条**发给 Agent 的自然语言指令，不是 PowerShell 命令**。模型和依赖的联网下载已在该指令中明确授权；Agent 仍会遵守你本机的权限与确认机制。你需要先安装并登录所用 Agent；本项目不提供 Agent 服务或 API 额度。首次部署可能下载多 GB 文件，GPU/驱动不符合条件时不能靠一句话绕过。
+
+只想听音频、已有字幕？直接使用 [离线播放器模块](modules/offline-player/README.md)，无需部署字幕工作台、Python 或模型。需要自己生成字幕？查看 [字幕工作台模块](modules/subtitle-workstation/README.md)。
+
+**AGENTS.md 是给 Agent 的部署与维护说明，不是程序运行依赖。** 普通用户不使用 Agent 也能按 README 操作。当前提供可执行安装脚本和固定模型校验，但尚未在全新电脑完成整套安装验证，不能承诺所有 Agent 或电脑均能无人值守成功。
+
 面向英语教师、四六级备考者和需要逐句精听的自主学习者的本地听力备课与训练工作流。
 
 **代码许可证：MIT · 原创猫角色与 Learn with Adam 品牌保留权利**
@@ -47,4 +59,4 @@ docs/                  # 架构、使用、重建与发布审查
 
 代码和原创文档采用 [MIT](LICENSE)；猫动画与 Learn with Adam 名称/Logo 适用 [独立权利声明](ASSETS-LICENSE.md)，不授予商标许可。第三方组件适用 [上游许可证](THIRD-PARTY-NOTICES.md)。因此工作流代码开放不等于所有图像和品牌均采用开放许可证。
 
-按作者确认，本仓库不上传真题音频及字幕；仅提供这一套示范的本地导入方法。模型、环境与缓存也不进入 Git。已有验收针对作者本机；新电脑的首次安装与 GPU 兼容性仍需验证。
+按作者确认，本仓库不上传真题音频及字幕；仅提供这一套示范的本地导入方法。模型通过 [固定模型 Release](https://github.com/Arikimizord/english-listening-local-trainer/releases/tag/models-v1) 分发，默认安装器会校验并安装；模型大文件不进入 Git 历史，环境与缓存也不进入 Git。已有验收针对作者本机；新电脑的首次安装与 GPU 兼容性仍需验证。

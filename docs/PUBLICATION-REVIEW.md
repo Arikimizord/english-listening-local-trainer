@@ -8,4 +8,4 @@
 
 tools/audit-release.py 检查文件范围及常见凭据模式，生成 automated-audit.json 与 source-manifest.json。二进制源码来源已核对，原创动画权利由作者确认。扫描没有覆盖所有可能的秘密格式，不声称零风险。上传前应以最终候选清单为准。
 
-setup.ps1 仅增加安装编排，不改已验收生产管线；全新电脑安装仍待验证。源代码测试及已验证范围见 VERIFICATION.md。第三方运行库与模型不进 Git；其上游许可没有被本项目 MIT 覆盖。
+setup.ps1 仅增加安装编排，不改已验收生产管线；全新电脑安装仍待验证。源代码测试及已验证范围见 VERIFICATION.md。第三方运行库与模型不进 Git；固定模型在 models-v1 Release 单独提供，附校验清单与模型许可证，其上游许可没有被本项目 MIT 覆盖。

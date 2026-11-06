@@ -11,8 +11,8 @@
   },
   {
     "path": "AGENTS.md",
-    "bytes": 635,
-    "sha256": "98f816f0fa1ffbcb101f4391fc219bc708e825abdf371207ae3489a5a68d00b0"
+    "bytes": 2269,
+    "sha256": "5bfed270d64e4e79cbd56c5b59985bbf35ae753b94609453ae47c97f7070b417"
   },
   {
     "path": "ASSETS-LICENSE.md",
@@ -26,18 +26,18 @@
   },
   {
     "path": "docs/INSTALL.md",
-    "bytes": 3177,
-    "sha256": "cf1bda087b86590f180eab602df559be79f879ce44a72f3f9d4572fbd33a3144"
+    "bytes": 4315,
+    "sha256": "156bf6cd23535ebdc1c1c6636b85de845accce03ccf124eb8aadcaee67942293"
   },
   {
     "path": "docs/MAINTENANCE.md",
-    "bytes": 2397,
-    "sha256": "281e18600ad99fa0ddc58ece557ac0c9f0ce35edf61621ca6503b773e5048c67"
+    "bytes": 2884,
+    "sha256": "52879baee507984174127a6416c06c27cdb26c663d99d4c5dd974cdb7248b70e"
   },
   {
     "path": "docs/PUBLICATION-REVIEW.md",
-    "bytes": 1334,
-    "sha256": "abe6dc939a54f34b10d628fa92ae1f0dfb58b65e1b1dec1a24746bd7230773ee"
+    "bytes": 1419,
+    "sha256": "5d3e52ca86fa99afc560ac1fc3aa812265cdf0c8054bd2ad99c1f883c3ec2962"
   },
   {
     "path": "docs/USAGE.md",
@@ -46,8 +46,8 @@
   },
   {
     "path": "docs/VERIFICATION.md",
-    "bytes": 1446,
-    "sha256": "02a04d9744dac21b63e4e1407a360765c18052a9168b814317b14029228a1082"
+    "bytes": 2426,
+    "sha256": "991c57f8c7d8b5192ef8c5abb688b77363f19a62bb8a4f47069576a4345e5e55"
   },
   {
     "path": "examples/README.md",
@@ -80,6 +80,11 @@
     "sha256": "8e8c7a826912ed2f1a48e63ffd51ff209fce0311a9c4b180c0798df44774c4d6"
   },
   {
+    "path": "modules/offline-player/README.md",
+    "bytes": 2242,
+    "sha256": "6c580c05920c9e1b47821e0fb80c3559ff7bbb480058d066d1f9f98de0b5d8f7"
+  },
+  {
     "path": "modules/offline-player/src/LoadingScene.cs",
     "bytes": 4128,
     "sha256": "d0b8edb488b347d8016a87c9e97614d8b3a72396471fff28052a07f2635b37bc"
@@ -93,6 +98,11 @@
     "path": "modules/subtitle-workstation/config/examples/local-audio.json",
     "bytes": 115,
     "sha256": "63a2f68114ce960943a05b174a4cc1ecd1a501629b212f067885eb940a96b237"
+  },
+  {
+    "path": "modules/subtitle-workstation/config/model-bundle-v1.json",
+    "bytes": 4189,
+    "sha256": "6f231ea4dadd6f5802480936248ad13066a01b857e66e9ee7a9eea15b42adf74"
   },
   {
     "path": "modules/subtitle-workstation/config/models-stage3.lock.json",
@@ -115,6 +125,11 @@
     "sha256": "fee82892b85724086be8651adc5d0c53ccc32cc5dee164f921e4fe1259e9fb1b"
   },
   {
+    "path": "modules/subtitle-workstation/README.md",
+    "bytes": 2723,
+    "sha256": "ac088b58a96340e5eb1b57e9e70db6aa05f3bcd7b595a24e0bdd9d0a018b77e4"
+  },
+  {
     "path": "modules/subtitle-workstation/review.cmd",
     "bytes": 77,
     "sha256": "4621d86e9fde01658cc6ac7bc49e37428c431ae05de0e40b1efc87ea30e32482"
@@ -128,6 +143,11 @@
     "path": "modules/subtitle-workstation/scripts/boundary_repair.py",
     "bytes": 5379,
     "sha256": "91635a2bbce7a5e75fe7408d51a686a0eb8410c160c7968a59842341b9018171"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/download-model-bundle.py",
+    "bytes": 1773,
+    "sha256": "255d11c077acce7fb41d4b539d534337ab3ae35e3b772cad934b10ddd4fc6d5d"
   },
   {
     "path": "modules/subtitle-workstation/scripts/download-pinned-model.py",
@@ -153,6 +173,11 @@
     "path": "modules/subtitle-workstation/scripts/install-local-torch.ps1",
     "bytes": 834,
     "sha256": "215f2730657736403fc715ed17129f3ffacf57bcee7c978dddf524d5eae381aa"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/install-model-bundle.py",
+    "bytes": 3515,
+    "sha256": "02edcdaad1807588ab932711ca4663c76d66f3b7d88692c9f525a4ba9443d571"
   },
   {
     "path": "modules/subtitle-workstation/scripts/install-private-ffmpeg.py",
@@ -241,8 +266,8 @@
   },
   {
     "path": "modules/subtitle-workstation/setup.ps1",
-    "bytes": 1483,
-    "sha256": "793b50e5c477f6bdd4669e862f4b2186c1587a41fef242f643d0d51668d86094"
+    "bytes": 1868,
+    "sha256": "c6c322de3ce2052d5d3936858292e9e3d63bb2c32d255069db68678bb1ab7fa0"
   },
   {
     "path": "modules/subtitle-workstation/workstation.cmd",
@@ -261,8 +286,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 4177,
-    "sha256": "5f7bbadc727439937117bd7212535dea94a48d7e9e6410d74577ea8f2f3259bb"
+    "bytes": 6074,
+    "sha256": "0b88c22d37328822cb90a6ec39887ba8b963795f2b8e6254dfa6bd463f5bb722"
   },
   {
     "path": "SECURITY.md",
@@ -271,8 +296,8 @@
   },
   {
     "path": "THIRD-PARTY-NOTICES.md",
-    "bytes": 2145,
-    "sha256": "8ed90f429617b5470e71ad6e0cc67eb7733bf4cba329b26f206ee60bbf369e6c"
+    "bytes": 2423,
+    "sha256": "6ddcf0424740af4597922020ea666ee59bbe877219e2d30f4d3a574b3a2f9e9f"
   },
   {
     "path": "tools/audit-release.py",

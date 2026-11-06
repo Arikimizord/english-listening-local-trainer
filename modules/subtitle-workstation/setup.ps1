@@ -1,6 +1,6 @@
 ﻿# Run in a fresh child PowerShell. Downloads pinned upstream dependencies and models.
 [CmdletBinding()]
-param([switch]$SkipModels)
+param([switch]$SkipModels,[string]$ModelBundleDirectory,[switch]$UseUpstreamModels)
 $ErrorActionPreference='Stop'
 $root=$PSScriptRoot
 if(-not [Environment]::Is64BitOperatingSystem){throw 'Windows x64 is required'}
@@ -19,7 +19,10 @@ Run-Python 'download-torch-wheel.py'
 if($LASTEXITCODE -ne 0){throw 'Locked dependency installation failed'}
 Run-Python 'install-private-ffmpeg.py'
 if($SkipModels){Write-Host 'Runtime prepared. Run setup.ps1 without -SkipModels to install pinned models before production.';exit 0}
-Run-Python 'download-stage3-models.py'
+if($ModelBundleDirectory){
+ & (Join-Path $root 'envs/subtitle/Scripts/python.exe') -I -B -X utf8 (Join-Path $root 'scripts/install-model-bundle.py') --directory $ModelBundleDirectory
+ if($LASTEXITCODE -ne 0){throw 'Local model bundle installation failed'}
+}elseif($UseUpstreamModels){Run-Python 'download-stage3-models.py'}else{Run-Python 'download-model-bundle.py'}
 & (Join-Path $root 'workstation.ps1') doctor --json
 if($LASTEXITCODE -ne 0){throw 'Doctor failed; preserve its error output'}
 Write-Host 'Installation checks complete. Start 字幕工作站.cmd and review generated subtitles before classroom use.'
