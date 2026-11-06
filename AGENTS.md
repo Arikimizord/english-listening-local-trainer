@@ -1,0 +1,3 @@
+# Maintainer instructions
+
+Read README.md, docs/MAINTENANCE.md and ASSETS-LICENSE.md. Keep the subtitle workstation and offline player independent. Do not run model downloads, real-audio processing or publish private data without explicit task authorization. Preserve hash-bound snapshots, independent revisions and pending human review. Do not silently upgrade pinned dependencies/models or replace GPU validation with CPU fallback. Do not commit local caches, environments, jobs, UI state, logs or media. Code is MIT; original characters and branding are excluded. Check release files with tools/audit-release.py before publication.

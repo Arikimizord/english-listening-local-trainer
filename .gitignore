@@ -1,0 +1,26 @@
+# Local media, model/runtime binaries and state
+**/envs/
+**/models/
+**/runtime/
+**/cache/
+**/temp/
+**/jobs/
+**/ui/
+**/__pycache__/
+*.pyc
+*.log
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.zip
+*.mp3
+*.wav
+*.m4a
+*.aac
+# Examples may be explicitly allowlisted only after redistribution approval.
+*.srt
+*.ass
+*.flac
+**/examples/local/

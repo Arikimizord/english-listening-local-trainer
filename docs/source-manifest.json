@@ -1,0 +1,282 @@
+[
+  {
+    "path": ".gitattributes",
+    "bytes": 144,
+    "sha256": "75a43228c4163a17f17a564793ddb7af060df8411cd8980e32df88c00d081451"
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 318,
+    "sha256": "ac2faf40a7e6ce0968b97e2343b726cdbc00daa9eb9ecee6834126e61270a151"
+  },
+  {
+    "path": "AGENTS.md",
+    "bytes": 635,
+    "sha256": "98f816f0fa1ffbcb101f4391fc219bc708e825abdf371207ae3489a5a68d00b0"
+  },
+  {
+    "path": "ASSETS-LICENSE.md",
+    "bytes": 1087,
+    "sha256": "b2073d6c119693c3ecf5554b1b1d13fc7f9ec17344d987ef3b35e60357abf6c5"
+  },
+  {
+    "path": "docs/CLI.md",
+    "bytes": 5576,
+    "sha256": "69fd54872c701dab69d1039676688ee331abc126f751d9c87c0ed7f5fc62982c"
+  },
+  {
+    "path": "docs/INSTALL.md",
+    "bytes": 3177,
+    "sha256": "cf1bda087b86590f180eab602df559be79f879ce44a72f3f9d4572fbd33a3144"
+  },
+  {
+    "path": "docs/MAINTENANCE.md",
+    "bytes": 2397,
+    "sha256": "281e18600ad99fa0ddc58ece557ac0c9f0ce35edf61621ca6503b773e5048c67"
+  },
+  {
+    "path": "docs/PUBLICATION-REVIEW.md",
+    "bytes": 1334,
+    "sha256": "abe6dc939a54f34b10d628fa92ae1f0dfb58b65e1b1dec1a24746bd7230773ee"
+  },
+  {
+    "path": "docs/USAGE.md",
+    "bytes": 2257,
+    "sha256": "9a503df16a8ca76d3ae7d51356b25306388050dbd963c13107a00a65c7a6dac6"
+  },
+  {
+    "path": "docs/VERIFICATION.md",
+    "bytes": 1446,
+    "sha256": "02a04d9744dac21b63e4e1407a360765c18052a9168b814317b14029228a1082"
+  },
+  {
+    "path": "examples/README.md",
+    "bytes": 1413,
+    "sha256": "66a4e5ab3f7642418a5a72cc2a46a6ebc1922cc8c542705175ddd470da1a7f05"
+  },
+  {
+    "path": "LICENSE",
+    "bytes": 1283,
+    "sha256": "d11b366000bd3c78a3a580cb31833c01bbccc43e5cb30dd76a420fe1a6b342e6"
+  },
+  {
+    "path": "modules/offline-player/assets/cats-frames.png",
+    "bytes": 884602,
+    "sha256": "b98116acbdb8d13f0bff36bb9c7893ea6374964c5105e238847efd03559656ce"
+  },
+  {
+    "path": "modules/offline-player/assets/running-cats.gif",
+    "bytes": 410977,
+    "sha256": "14bb74ae0dfa99f579c7096ec54287b22adbb911513635d566a94e155c815700"
+  },
+  {
+    "path": "modules/offline-player/build.ps1",
+    "bytes": 830,
+    "sha256": "c3325c68c07dca2ea3e0bf52fbcf846ba708284244e17c9a934cad110dca8d7c"
+  },
+  {
+    "path": "modules/offline-player/dist/听力课堂.exe",
+    "bytes": 928768,
+    "sha256": "8e8c7a826912ed2f1a48e63ffd51ff209fce0311a9c4b180c0798df44774c4d6"
+  },
+  {
+    "path": "modules/offline-player/src/LoadingScene.cs",
+    "bytes": 4128,
+    "sha256": "d0b8edb488b347d8016a87c9e97614d8b3a72396471fff28052a07f2635b37bc"
+  },
+  {
+    "path": "modules/offline-player/src/Player.cs",
+    "bytes": 26354,
+    "sha256": "e8f1ef43fd489dff7a6d5ce1d65c3a7d122077cbcb1e1a22f00adb845ba38d59"
+  },
+  {
+    "path": "modules/subtitle-workstation/config/examples/local-audio.json",
+    "bytes": 115,
+    "sha256": "63a2f68114ce960943a05b174a4cc1ecd1a501629b212f067885eb940a96b237"
+  },
+  {
+    "path": "modules/subtitle-workstation/config/models-stage3.lock.json",
+    "bytes": 7030,
+    "sha256": "683af21dbbe236155e4180afa27cef09a0e73441277018498613ee0aee4d1e90"
+  },
+  {
+    "path": "modules/subtitle-workstation/config/requirements-win-py311.lock",
+    "bytes": 208439,
+    "sha256": "2ced265a7f601e939a46f9352977ea49858efee86945dfd0511230c9362d0ed9"
+  },
+  {
+    "path": "modules/subtitle-workstation/config/requirements.in",
+    "bytes": 319,
+    "sha256": "bc5bc4de8c90d7531181f8152b8338114738f678c3cd1f515fcedb94528e1858"
+  },
+  {
+    "path": "modules/subtitle-workstation/planning/environment-validation.json",
+    "bytes": 7214,
+    "sha256": "fee82892b85724086be8651adc5d0c53ccc32cc5dee164f921e4fe1259e9fb1b"
+  },
+  {
+    "path": "modules/subtitle-workstation/review.cmd",
+    "bytes": 77,
+    "sha256": "4621d86e9fde01658cc6ac7bc49e37428c431ae05de0e40b1efc87ea30e32482"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/bootstrap-runtime.ps1",
+    "bytes": 1701,
+    "sha256": "ba5e6f5bb4a867785281fa5da3127982b3bdfcf0e2ad28f0b4262cdb765ebc4b"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/boundary_repair.py",
+    "bytes": 5379,
+    "sha256": "91635a2bbce7a5e75fe7408d51a686a0eb8410c160c7968a59842341b9018171"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/download-pinned-model.py",
+    "bytes": 3151,
+    "sha256": "ec929409acd03f6a75853816aaeccac63dbbb979b2b3d5f4a309c19ea00f525a"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/download-stage3-models.py",
+    "bytes": 4404,
+    "sha256": "57cf96bd72690898207711f230e7bfc9632947db4c945372e84ab13b8dcb5fba"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/download-torch-wheel.py",
+    "bytes": 3995,
+    "sha256": "6b25fd447903f858f012fcd12e8ab5dee08046a51ecd5a1d767d3aab1c2cd2ee"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/environment.ps1",
+    "bytes": 2976,
+    "sha256": "33554c696b22871e4ffd7397414abfa767842d3dc27fe70e5ed57fd316a1fd6b"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/install-local-torch.ps1",
+    "bytes": 834,
+    "sha256": "215f2730657736403fc715ed17129f3ffacf57bcee7c978dddf524d5eae381aa"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/install-private-ffmpeg.py",
+    "bytes": 1440,
+    "sha256": "a8bb433c59d1d6adfe45049439c4b9e552f20c1f1c3202705e99be0e2783d6eb"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/pipeline-worker.py",
+    "bytes": 12057,
+    "sha256": "5d423f252051174c4cffb8e6a20be44ea9a67db08ad36248f72ba1030c3da18e"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/private-runtime.py",
+    "bytes": 611,
+    "sha256": "1028f9e492c6542db460ecce33ec0535fec882d654c1268e5d99fee04f836212"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/quality_pipeline.py",
+    "bytes": 3802,
+    "sha256": "dacc245ea4cc215738f1828d67b5eeabebc3d8ab0893e7e9ab2d1477eec21679"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/rebuild-environment.ps1",
+    "bytes": 812,
+    "sha256": "1398d15d2848018f9e2ee2a5b57f9f46dd859c3e83b7033e75dd2d29941fd018"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/review-server.py",
+    "bytes": 10369,
+    "sha256": "058243d13c07c99738775c48f92ba238ae22e278d81420f27c133b5c395879d5"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/review.html",
+    "bytes": 9359,
+    "sha256": "87ab0ce07e0dadff655725908e09b8cd2701117e0bd3ee9474ad07c21a7f5143"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/sentence_units.py",
+    "bytes": 3046,
+    "sha256": "77c6d60ca81391856d96aeed5ec554f94dd6791a045ee3382ab31ddabda4795f"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/start-review.ps1",
+    "bytes": 241,
+    "sha256": "964560a7fe718629a671bb3b71411862f5f2310b682a76c5365084bcfe9be3fb"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/start-webui.ps1",
+    "bytes": 280,
+    "sha256": "f53ca00cd99633a216742ed37fef334ffbc8e283d139f675812e6dfcacf19708"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/subtitle_formats.py",
+    "bytes": 10007,
+    "sha256": "b0a2d68db7ed7cdd90f26c7828f174848882a9b8aa3a3352c87bc3f77801ae05"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/test-stage4-unit.py",
+    "bytes": 7909,
+    "sha256": "61671f7f4c3095f7753febe605191c2320b361a53c225af3a9021de9332d35a2"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/webui-cli.ps1",
+    "bytes": 223,
+    "sha256": "252f17f04cac76e06c54ef879b9dd0c234fcf08ca61413cd2fa37bc9554a738a"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/webui-server.py",
+    "bytes": 18836,
+    "sha256": "25125aae473d408566fd815a9def0cab1db0ec2451b6ab18f867dfe88853eafe"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/webui.html",
+    "bytes": 21862,
+    "sha256": "a076b0d4fc4b6980e5a3c044098d310366857a1f3599e747794818624ef8bd2f"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/workstation-bootstrap.py",
+    "bytes": 264,
+    "sha256": "aa28bf0638ae3aedf4c33654a719eaa092d1421d6eda9976b5660eff9330bdc9"
+  },
+  {
+    "path": "modules/subtitle-workstation/scripts/workstation-core.py",
+    "bytes": 21647,
+    "sha256": "b8eca29e3c29a0edfcd1c93034d8a598060051e40bb6394e672e78085b7a1c23"
+  },
+  {
+    "path": "modules/subtitle-workstation/setup.ps1",
+    "bytes": 1483,
+    "sha256": "793b50e5c477f6bdd4669e862f4b2186c1587a41fef242f643d0d51668d86094"
+  },
+  {
+    "path": "modules/subtitle-workstation/workstation.cmd",
+    "bytes": 112,
+    "sha256": "addab542277cdb1a3e94d4e64b23fbf25de481359bc9c3a5afc3db8b9c8c3efc"
+  },
+  {
+    "path": "modules/subtitle-workstation/workstation.ps1",
+    "bytes": 956,
+    "sha256": "821db3459f8739282cfd1805b061a44ee1be9becd7597b7098e1b38a52fc5354"
+  },
+  {
+    "path": "modules/subtitle-workstation/字幕工作站.cmd",
+    "bytes": 145,
+    "sha256": "0bc5574c09aea22aabb986d322d98c4b0afb06be3dbd88c3463679e9b2424bc1"
+  },
+  {
+    "path": "README.md",
+    "bytes": 4177,
+    "sha256": "5f7bbadc727439937117bd7212535dea94a48d7e9e6410d74577ea8f2f3259bb"
+  },
+  {
+    "path": "SECURITY.md",
+    "bytes": 760,
+    "sha256": "de83e6760b62a70db686b712b1094120198e3c5c3eb00f7b80b2311951ae8f06"
+  },
+  {
+    "path": "THIRD-PARTY-NOTICES.md",
+    "bytes": 2145,
+    "sha256": "8ed90f429617b5470e71ad6e0cc67eb7733bf4cba329b26f206ee60bbf369e6c"
+  },
+  {
+    "path": "tools/audit-release.py",
+    "bytes": 2332,
+    "sha256": "92eabbf2de566df7db0fb8e1478316713033b7b31617cc31061be63facf99f1f"
+  }
+]

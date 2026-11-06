@@ -1,0 +1,51 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>字幕修订工作台</title>
+<style>body{font:18px system-ui;background:#f3f5f7;color:#182331;max-width:1100px;margin:32px auto}button,input,textarea,select{font:inherit;padding:8px;margin:4px}button{cursor:pointer}textarea{width:95%;height:90px}section{background:white;padding:24px;border-radius:12px;margin:16px 0}.active{color:#8a3100;background:#ffe4b8;box-shadow:0 0 0 2px #ffe4b8;border-radius:3px}#caption{min-height:120px;font-size:28px;line-height:1.65;font-weight:400}#caption span{font:inherit}#words button{font-size:16px}canvas{width:100%;height:100px}small{color:#536171}</style>
+<h1>字幕修订工作台</h1><small>本地试听 · 修订另存版本 · 审核状态保持待确认</small>
+<section><audio id="audio" controls style="width:100%"></audio><br><button id="back">−10 秒</button><button id="forward">+10 秒</button><label>倍速<select id="rate"><option>0.75</option><option selected>1</option><option>1.25</option><option>1.5</option></select></label><label><input id="loop" type="checkbox">循环当前句</label><label><input id="hidden" type="checkbox">隐藏字幕</label><canvas id="wave" width="1000" height="100"></canvas><div id="caption"></div></section>
+<section><label>修订版本<select id="versions"></select></label><button id="loadversion">加载选中版本</button><div id="downloads"></div></section>
+<section><button id="prev">上一句</button><select id="segments"></select><button id="next">下一句</button><button id="listen">试听本句</button><textarea id="text"></textarea><label>起点（毫秒）<input id="start" type="number"></label><label>终点<input id="end" type="number"></label><button id="setstart">用播放位置设起点</button><button id="setend">设终点</button><div id="words"></div><button id="apply">应用本句修改</button><button id="align">重新对齐当前句</button><button id="sentences">按完整句重新断句</button><button id="merge">与下一句合并</button><button id="save">保存独立修订和字幕</button><p id="status" role="status"></p></section>
+<script>
+const $=id=>document.getElementById(id), audio=$('audio');let pack,doc,index=0,dirty=false;
+function status(t){$('status').textContent=t}
+function current(){return doc.segments[index]}
+function show(){let s=current();$('segments').value=index;$('text').value=s.text;$('start').value=s.start_ms;$('end').value=s.end_ms;$('words').replaceChildren();for(let [i,w] of s.words.entries()){let b=document.createElement('button');b.textContent=w.word;b.onclick=()=>{let ws=prompt('词起点（毫秒；空白表示缺失）',w.start_ms??'');if(ws===null)return;let we=prompt('词终点（毫秒；空白表示缺失）',w.end_ms??'');if(we===null)return;w.timing_method='manual';w.start_ms=ws.trim()===''?null:Number(ws);w.end_ms=we.trim()===''?null:Number(we);dirty=true;b.textContent=w.word+' *';};$('words').append(b)}}
+function select(i){index=Math.max(0,Math.min(doc.segments.length-1,i));show()}
+function apply(){let s=current();if(s.text!==$('text').value){s.words=[];status('文字已修改：已移除旧词轴，请重新对齐或逐词补轴。')}s.text=$('text').value;s.start_ms=Number($('start').value);s.end_ms=Number($('end').value);dirty=true;show()}
+$('apply').onclick=apply;$('segments').onchange=e=>select(Number(e.target.value));$('prev').onclick=()=>select(index-1);$('next').onclick=()=>select(index+1);$('listen').onclick=()=>{audio.currentTime=current().start_ms/1000;audio.play().catch(e=>status(e.message))};$('back').onclick=()=>audio.currentTime=Math.max(0,audio.currentTime-10);$('forward').onclick=()=>audio.currentTime=Math.min(audio.duration,audio.currentTime+10);$('rate').onchange=e=>audio.playbackRate=Number(e.target.value);$('setstart').onclick=()=>$('start').value=Math.round(audio.currentTime*1000);$('setend').onclick=()=>$('end').value=Math.round(audio.currentTime*1000);
+let captionKey='', captionNodes=[], activeWord=-1;
+function tick(){
+ if(!doc)return;
+ let t=audio.currentTime*1000;
+ if($('loop').checked&&!audio.paused&&t>=current().end_ms){audio.currentTime=current().start_ms/1000;t=current().start_ms}
+ // Keep the last sentence readable through pauses and after playback ends.
+ let s=doc.segments[0];
+ for(let candidate of doc.segments){if(candidate.start_ms>t)break;s=candidate}
+ const hidden=$('hidden').checked;
+ const timed=s&&s.words.length&&s.words.map(w=>w.word).join(' ').trim()===s.text.trim();
+ const key=JSON.stringify([hidden,s?.id,s?.text,timed?s.words.map(w=>w.word):null]);
+ if(key!==captionKey){
+  captionKey=key;captionNodes=[];activeWord=-1;
+  const fragment=document.createDocumentFragment();
+  if(s&&!hidden){
+   if(timed){for(let w of s.words){let span=document.createElement('span');span.textContent=w.word;captionNodes.push(span);fragment.append(span,document.createTextNode(' '))}}
+   else fragment.append(document.createTextNode(s.text));
+  }
+  $('caption').replaceChildren(fragment);
+ }
+ const next=hidden||!timed?-1:s.words.findIndex(w=>w.start_ms!==null&&w.end_ms!==null&&w.start_ms<=t&&t<w.end_ms);
+ if(next!==activeWord){captionNodes[activeWord]?.classList.remove('active');captionNodes[next]?.classList.add('active');activeWord=next}
+}
+audio.ontimeupdate=tick;setInterval(tick,40);
+function versionOptions(versions){$('versions').replaceChildren();for(let v of versions||[]){let o=document.createElement('option');o.value=v.id;o.textContent=v.created_at;$('versions').append(o)}if(pack.revision)$('versions').value=pack.revision}
+function downloads(rev){$('downloads').replaceChildren();if(!rev)return;for(let name of ['subtitles.json','subtitles.srt','subtitles.ass','manifest.json']){let a=document.createElement('a');a.textContent=name+' ';a.href='download/'+rev+'/'+name;a.download=name;$('downloads').append(a)}}
+function loaded(value){pack=value;doc=pack.document;index=0;captionKey='';$('segments').replaceChildren();for(let [i,s] of doc.segments.entries()){let o=document.createElement('option');o.value=i;o.textContent=(i+1)+' · '+s.text.slice(0,48);$('segments').append(o)}versionOptions(pack.versions);downloads(pack.revision);show();tick()}
+$('loadversion').onclick=async()=>{if(dirty&&!confirm('放弃当前未保存修改并加载版本？'))return;try{let r=await fetch('revision/'+$('versions').value);if(!r.ok)throw Error('版本加载失败');loaded(await r.json());dirty=false;status('已加载修订版本')}catch(e){status(e.message)}};
+for(let id of ['text','start','end'])$(id).addEventListener('input',()=>dirty=true);
+let busy=false;
+async function submit(action){if(busy)return;apply();busy=true;for(let el of document.querySelectorAll('section:not(:first-of-type) button,section:not(:first-of-type) input,section:not(:first-of-type) textarea,section:not(:first-of-type) select'))el.disabled=true;status(action==='align'?'正在离线重新对齐当前句，请稍候…':action==='sentences'?'正在进行本地音频质量校验并重组句子，首次可能需要数分钟…':'正在保存…');try{let r=await fetch(action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...pack,document:doc,segment_index:index})});let v=await r.json();if(!r.ok)throw Error(v.error);if(action==='sentences'){loaded({...pack,document:v.document});dirty=true;status('已完成本地音频质量校验与句子重组；可保存独立修订。')}else if(action==='align'){doc=v.document;captionKey='';show();tick();dirty=true;status('当前句词轴已更新；其他句保持原样，请试听后保存。')}else{pack.revision=v.revision;versionOptions(v.versions);downloads(v.revision);dirty=false;status('已保存：'+v.saved+'（待用户审核）')}}catch(e){status('操作失败：'+e.message)}finally{busy=false;for(let el of document.querySelectorAll('section:not(:first-of-type) button,section:not(:first-of-type) input,section:not(:first-of-type) textarea,section:not(:first-of-type) select'))el.disabled=false}}
+$('sentences').onclick=()=>submit('sentences');
+$('merge').onclick=()=>{if(index+1>=doc.segments.length)return;apply();let a=current(),b=doc.segments[index+1];if(a.end_ms>b.start_ms){status('句子时间重叠，请先修订时间。');return}a.text=a.text.trim()+' '+b.text.trim();a.end_ms=b.end_ms;a.words=[...(a.words||[]),...(b.words||[])];a.sentence_boundary='manual_merge';doc.segments.splice(index+1,1);loaded({...pack,document:doc});dirty=true;status('已合并，请试听后保存独立修订。')};
+$('save').onclick=()=>submit('save');$('align').onclick=()=>submit('align');
+window.onbeforeunload=e=>{if(dirty){e.preventDefault();e.returnValue=''}};
+(async()=>{loaded(await(await fetch('data')).json());audio.src='audio';try{let bytes=await(await fetch('audio')).arrayBuffer();let ctx=new AudioContext();let buf=await ctx.decodeAudioData(bytes);let data=buf.getChannelData(0),c=$('wave').getContext('2d');c.strokeStyle='#287b8b';for(let x=0;x<1000;x++){let lo=Math.floor(x*data.length/1000),hi=Math.floor((x+1)*data.length/1000),peak=0;for(let i=lo;i<hi;i++)peak=Math.max(peak,Math.abs(data[i]));c.beginPath();c.moveTo(x,50-peak*48);c.lineTo(x,50+peak*48);c.stroke()}ctx.close();$('wave').onclick=e=>audio.currentTime=(e.offsetX/$('wave').clientWidth)*audio.duration}catch(e){status('波形不可用，仍可通过音频控件试听：'+e.message)}})();
+</script></html>

@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "stage": 3,
+  "models": [
+    {
+      "kind": "asr",
+      "repo_id": "Systran/faster-whisper-large-v3",
+      "revision": "edaa852ec7e145841d8ffdb056a99866b5f0a478",
+      "license_declared_by_model_card": "mit",
+      "directory": "models/asr/faster-whisper-large-v3",
+      "files": [
+        {
+          "name": "README.md",
+          "size": 2052,
+          "git_blob_sha1": "a84bfa7f20cac02ea5a99efa5eaf687ad58c1caf",
+          "sha256": null,
+          "url": "https://huggingface.co/Systran/faster-whisper-large-v3/resolve/edaa852ec7e145841d8ffdb056a99866b5f0a478/README.md"
+        },
+        {
+          "name": "config.json",
+          "size": 2394,
+          "git_blob_sha1": "75336feae814999bae6ccccdecf177639ffc6f9d",
+          "sha256": null,
+          "url": "https://huggingface.co/Systran/faster-whisper-large-v3/resolve/edaa852ec7e145841d8ffdb056a99866b5f0a478/config.json"
+        },
+        {
+          "name": "model.bin",
+          "size": 3087284237,
+          "git_blob_sha1": "e91bbba72de41ca3cdc9a656b17aa9407c7e85b6",
+          "sha256": "69f74147e3334731bc3a76048724833325d2ec74642fb52620eda87352e3d4f1",
+          "url": "https://huggingface.co/Systran/faster-whisper-large-v3/resolve/edaa852ec7e145841d8ffdb056a99866b5f0a478/model.bin"
+        },
+        {
+          "name": "preprocessor_config.json",
+          "size": 340,
+          "git_blob_sha1": "931c77a740890c46365c7ae0c9d350ba3cca908f",
+          "sha256": null,
+          "url": "https://huggingface.co/Systran/faster-whisper-large-v3/resolve/edaa852ec7e145841d8ffdb056a99866b5f0a478/preprocessor_config.json"
+        },
+        {
+          "name": "tokenizer.json",
+          "size": 2480617,
+          "git_blob_sha1": "3a5e2ba63acdcac9a19ba56cf9bd27f185bfff61",
+          "sha256": null,
+          "url": "https://huggingface.co/Systran/faster-whisper-large-v3/resolve/edaa852ec7e145841d8ffdb056a99866b5f0a478/tokenizer.json"
+        },
+        {
+          "name": "vocabulary.json",
+          "size": 1068114,
+          "git_blob_sha1": "0adcd01e7c237205d593b707e66dd5d7bc785d2d",
+          "sha256": null,
+          "url": "https://huggingface.co/Systran/faster-whisper-large-v3/resolve/edaa852ec7e145841d8ffdb056a99866b5f0a478/vocabulary.json"
+        }
+      ]
+    },
+    {
+      "kind": "alignment",
+      "repo_id": "facebook/wav2vec2-base-960h",
+      "revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+      "license_declared_by_model_card": "apache-2.0",
+      "directory": "models/alignment/wav2vec2-base-960h",
+      "files": [
+        {
+          "name": "README.md",
+          "size": 4431,
+          "git_blob_sha1": "c7fe2047d7ac9b9816848c657b2a492ee95b264b",
+          "sha256": null,
+          "url": "https://huggingface.co/facebook/wav2vec2-base-960h/resolve/22aad52d435eb6dbaf354bdad9b0da84ce7d6156/README.md"
+        },
+        {
+          "name": "config.json",
+          "size": 1596,
+          "git_blob_sha1": "8ca9cc7496e145e37d09cec17d0c3bf9b8523c8e",
+          "sha256": null,
+          "url": "https://huggingface.co/facebook/wav2vec2-base-960h/resolve/22aad52d435eb6dbaf354bdad9b0da84ce7d6156/config.json"
+        },
+        {
+          "name": "feature_extractor_config.json",
+          "size": 158,
+          "git_blob_sha1": "52fdd74dc06f40033506e402269fbde5e7adc21d",
+          "sha256": null,
+          "url": "https://huggingface.co/facebook/wav2vec2-base-960h/resolve/22aad52d435eb6dbaf354bdad9b0da84ce7d6156/feature_extractor_config.json"
+        },
+        {
+          "name": "model.safetensors",
+          "size": 377607901,
+          "git_blob_sha1": "942562678fb28df86c055027c18216fa2a7cb5dd",
+          "sha256": "8aa76ab2243c81747a1f832954586bc566090c83a0ac167df6f31f0fa917d74a",
+          "url": "https://huggingface.co/facebook/wav2vec2-base-960h/resolve/22aad52d435eb6dbaf354bdad9b0da84ce7d6156/model.safetensors"
+        },
+        {
+          "name": "preprocessor_config.json",
+          "size": 159,
+          "git_blob_sha1": "3f24dc078fcba55ee1d417a413847ead40c093a3",
+          "sha256": null,
+          "url": "https://huggingface.co/facebook/wav2vec2-base-960h/resolve/22aad52d435eb6dbaf354bdad9b0da84ce7d6156/preprocessor_config.json"
+        },
+        {
+          "name": "special_tokens_map.json",
+          "size": 85,
+          "git_blob_sha1": "25bc39604f72700b3b8e10bd69bb2f227157edd1",
+          "sha256": null,
+          "url": "https://huggingface.co/facebook/wav2vec2-base-960h/resolve/22aad52d435eb6dbaf354bdad9b0da84ce7d6156/special_tokens_map.json"
+        },
+        {
+          "name": "tokenizer_config.json",
+          "size": 163,
+          "git_blob_sha1": "978a15a96dbb2d23e2afbc70137cae6c5ce38c8d",
+          "sha256": null,
+          "url": "https://huggingface.co/facebook/wav2vec2-base-960h/resolve/22aad52d435eb6dbaf354bdad9b0da84ce7d6156/tokenizer_config.json"
+        },
+        {
+          "name": "vocab.json",
+          "size": 291,
+          "git_blob_sha1": "88181b954aa14df68be9b444b3c36585f3078c0a",
+          "sha256": null,
+          "url": "https://huggingface.co/facebook/wav2vec2-base-960h/resolve/22aad52d435eb6dbaf354bdad9b0da84ce7d6156/vocab.json"
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "repo": "nltk/nltk_data",
+      "revision": "550b6625bcef1f2abff2ff770a5a0d272c9c6b2a",
+      "name": "packages/tokenizers/punkt_tab.zip",
+      "size": 4319076,
+      "git_blob_sha1": "5e5ff6137d5ee6025e400d1c3a7b21914c48b635",
+      "url": "https://raw.githubusercontent.com/nltk/nltk_data/550b6625bcef1f2abff2ff770a5a0d272c9c6b2a/packages/tokenizers/punkt_tab.zip",
+      "destination": "models/resources/punkt_tab.zip"
+    },
+    {
+      "repo": "nltk/nltk_data",
+      "revision": "550b6625bcef1f2abff2ff770a5a0d272c9c6b2a",
+      "name": "packages/tokenizers/punkt_tab.xml",
+      "size": 313,
+      "git_blob_sha1": "feba7a3c2b4efff6c6962a3af6d975631c3b9437",
+      "url": "https://raw.githubusercontent.com/nltk/nltk_data/550b6625bcef1f2abff2ff770a5a0d272c9c6b2a/packages/tokenizers/punkt_tab.xml",
+      "destination": "models/resources/punkt_tab.xml"
+    },
+    {
+      "repo": "openai/whisper",
+      "revision": "6e3be77e1a105e59086e3e21ff5f609fd6fa89a5",
+      "name": "tests/jfk.flac",
+      "size": 1152693,
+      "git_blob_sha1": "e44b7c13897eae7f78beb220c61fe77429a3961d",
+      "url": "https://raw.githubusercontent.com/openai/whisper/6e3be77e1a105e59086e3e21ff5f609fd6fa89a5/tests/jfk.flac",
+      "destination": "planning/stage3/samples/jfk.flac"
+    },
+    {
+      "repo": "openai/whisper",
+      "revision": "c5d42560760a05584c1c79546a098287e5a771eb",
+      "name": "tests/test_transcribe.py",
+      "size": 1524,
+      "git_blob_sha1": "599221af593a0381463e462ceacd9740c1b81d1b",
+      "url": "https://raw.githubusercontent.com/openai/whisper/c5d42560760a05584c1c79546a098287e5a771eb/tests/test_transcribe.py",
+      "destination": "planning/stage3/samples/upstream_test_transcribe.py"
+    }
+  ],
+  "all_user_media_uploads": false,
+  "expected_download_bytes": 3473926144
+}

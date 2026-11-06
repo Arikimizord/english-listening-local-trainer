@@ -1,0 +1,5 @@
+{
+  "candidate_count": 58,
+  "findings": [],
+  "scope": "allowlisted release files; pattern scanning is not a guarantee that all sensitive content has been detected"
+}

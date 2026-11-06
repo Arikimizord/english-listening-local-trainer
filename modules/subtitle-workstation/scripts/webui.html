@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>字幕工作站 · 离线制作</title>
+<style>
+
+[hidden]{display:none!important}
+:root{--paper:#fcf6ee;--ink:#293f3b;--muted:#667a72;--line:#dfe6dc;--blue:#327b68;--soft:#e8f2e9;--green:#246d55;--yellow:#f2ce7e}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.65 "Microsoft YaHei UI","Segoe UI",sans-serif}button,input{font:inherit}button,a{touch-action:manipulation}button{cursor:pointer;border:1px solid transparent;background:#eaf0e7;color:var(--ink);padding:10px 17px;border-radius:12px;font-weight:600;min-height:44px;transition:background .15s,transform .15s}button:hover:not(:disabled){background:#dce9dd;transform:translateY(-1px)}button:active:not(:disabled){transform:translateY(0)}button:disabled{cursor:default;opacity:.48}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,.drop:focus-visible{outline:3px solid #b88b35;outline-offset:4px}.primary{background:var(--blue);color:white}.primary:hover:not(:disabled){background:#256652}.quiet{background:transparent;color:var(--muted)}.danger{background:#fbece6;color:#a14132}header{min-height:76px;background:#fffcf7;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px max(28px,calc((100vw - 1216px)/2))}.brand{display:flex;align-items:center;gap:14px;font-size:17px;font-weight:700}.mark{padding:6px 12px;border-radius:10px;background:var(--blue);color:white;display:inline-flex;align-items:center;font-family:"Times New Roman",Times,serif;font-size:17px;line-height:1.2;font-weight:400;white-space:nowrap;flex-shrink:0}header small{font-size:12px;color:var(--muted);margin-left:6px;font-weight:400}.local{font-size:12px;color:var(--green);background:#eaf2e7;padding:6px 12px;border-radius:20px;white-space:nowrap}main{max-width:1280px;margin:auto;padding:32px 32px 24px}.hero{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:28px;padding:6px 4px 10px}.hero-copy{min-width:0}.hero-kicker{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2px;font-weight:700;color:var(--blue);margin-bottom:12px}.hero-kicker:before{content:"";width:20px;height:4px;border-radius:2px;background:#dbaf55}h1{font-size:30px;letter-spacing:-.7px;line-height:1.5;margin:0 0 10px}h2{font-size:17px;margin:0;letter-spacing:.3px}p{margin:0}.intro{color:var(--muted);font-size:14px;max-width:660px}.hero-art{width:226px;height:130px;flex-shrink:0}.layout{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,1fr);gap:22px;align-items:stretch}.card{background:#fffefb;border:1px solid var(--line);border-radius:20px;padding:25px}.card-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:22px}.layout .card-head h2{display:flex;align-items:center;gap:10px}.layout .card-head h2:before{content:"01";display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:#f9e9c3;color:#81652f;font-size:12px;letter-spacing:0}.layout .card:nth-child(2) h2:before{content:"02";background:#e3efe6;color:var(--blue)}.eyebrow{font-size:12px;color:var(--muted);margin-bottom:6px}.drop{display:flex;flex-direction:column;justify-content:center;align-items:center;border:1.5px dashed #a9bca9;border-radius:16px;min-height:212px;text-align:center;background:#f3f7ef;padding:22px;gap:9px;cursor:pointer;transition:background .15s,border-color .15s}.drop:hover,.drop.over{border-color:var(--blue);background:#e9f2e4}.file-icon{font:30px/1 Georgia,serif;color:var(--blue);background:#fffdf4;border:1px solid #d6e2cc;width:54px;height:54px;display:grid;place-items:center;border-radius:18px;transform:rotate(-6deg);margin-bottom:4px}.drop strong{font-size:17px;overflow-wrap:anywhere;max-width:100%}.subtle{font-size:12px;color:var(--muted)}.drop small{font-size:11px;color:var(--muted)}input[type=file]{display:none}details{margin-top:18px;color:var(--muted);font-size:12px}summary{cursor:pointer;width:fit-content;padding:3px 0}input[type=text]{margin-top:10px;border:1px solid #cad7cb;border-radius:10px;padding:11px 12px;width:100%;color:var(--ink);background:#fffefb}input::placeholder{color:#7d8b83}label{display:block;margin-top:8px}.action-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.action-row .primary{min-width:145px;flex-shrink:0}.steps{display:flex;gap:7px;margin:24px 0}.step{flex:1;font-size:12px;color:var(--muted);border-top:4px solid #e6ece2;padding-top:10px}.step.on{border-color:#d5a64d;color:#88682d}.step.done{border-color:var(--green);color:var(--green)}.current-name{font-size:18px;font-weight:600;overflow-wrap:anywhere;margin-bottom:10px}.status{font-size:12px;display:inline-block;border-radius:7px;background:var(--soft);color:var(--blue);padding:4px 10px}.status.good{background:#e6f1e5;color:var(--green)}.status.bad{background:#fbece6;color:#a14132}.empty{min-height:265px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;color:var(--muted);border-radius:14px;background:#faf9f3}.empty:before{content:"♪";display:grid;place-items:center;font:32px/1 Georgia,serif;width:62px;height:62px;border-radius:50%;background:#f5e9c9;color:#9a793c;margin-bottom:6px}.empty strong{color:var(--ink);font-size:15px}.task-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.download{display:inline-flex;align-items:center;text-decoration:none;background:var(--blue);color:white;border-radius:12px;padding:10px 17px;font-weight:600;min-height:44px}.download:hover{background:#256652}.download[aria-disabled=true]{pointer-events:none;opacity:.4}.notice{white-space:pre-wrap;overflow-wrap:anywhere;color:#a14132;background:#fbece6;border-radius:10px;padding:12px 15px;margin-top:15px;font-size:13px}#toast{margin:20px 0 0;padding:13px 17px;background:#e8f2e9;color:#246d55;border:1px solid #d2e3d3;border-radius:12px;overflow-wrap:anywhere}#toast.error{background:#fbece6;color:#a14132;border-color:#edc9bc}.history{margin-top:22px}.history .card-head{margin-bottom:10px}.history .card-head h2:before{content:"";display:inline-block;width:5px;height:16px;background:#dcb05c;border-radius:3px;margin-right:10px;vertical-align:-2px}.history-list{max-height:390px;overflow:auto;scrollbar-color:#bfcebf transparent;scrollbar-width:thin}.history-list>p{padding:18px 0}.history-row{display:flex;align-items:center;gap:14px;padding:16px 12px;border-bottom:1px solid var(--line)}.history-row:last-child{border:0}.history-main{flex:1;min-width:0}.history-name{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.history-meta{font-size:12px;color:var(--muted);margin-top:4px}.history-row.selected{background:#edf4e9;border-radius:12px;border-bottom-color:transparent}.history-row button{font-size:12px;min-height:36px;padding:6px 13px;flex-shrink:0}.foot{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px;margin:22px 4px 0}.foot button{font-size:11px;padding:0;min-height:24px;font-weight:400}pre{background:#f1f4ec;border:1px solid var(--line);border-radius:10px;padding:12px;white-space:pre-wrap;max-height:250px;overflow:auto;font:12px/1.7 Consolas,monospace;color:#52675d}.running-dot{display:inline-block;width:7px;height:7px;background:var(--blue);border-radius:50%;margin-right:6px}#taskInfo{font-size:13px;color:var(--muted);margin-top:10px}progress{width:100%;height:8px;accent-color:var(--blue);margin-top:14px;border:0;border-radius:6px;overflow:hidden}progress::-webkit-progress-bar{background:#e3eadd}progress::-webkit-progress-value{background:var(--blue);border-radius:6px}
+@media(max-width:1000px){header small{display:none}.hero-art{width:180px}.action-row{flex-wrap:wrap}.layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:850px){.layout{grid-template-columns:1fr}main{padding:26px 20px}header{padding:16px 20px}.foot{flex-wrap:wrap;gap:10px 20px}.hero-art{width:150px;height:110px}h1{font-size:26px}.card{padding:22px}.empty{min-height:190px}}
+@media(max-width:600px){header .local{display:none}.brand{gap:10px;font-size:15px}.mark{font-size:15px;padding:6px 10px}main{padding:24px 16px}.hero-art{display:none}.hero{margin-bottom:24px;padding:0}h1{font-size:24px;letter-spacing:-.4px}.intro{font-size:13px}.card{padding:20px;border-radius:16px}.action-row{align-items:stretch}.action-row .primary{width:100%}.foot{flex-direction:column}.foot button{align-self:flex-start}.task-actions>*{flex-grow:1;justify-content:center}.step{font-size:11px}.card-head{gap:8px}.brand{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){button,.drop{transition:none}button:hover:not(:disabled){transform:none}}
+</style>
+<header><div class="brand"><span class="mark">Learn with Adam</span>字幕工作站 <small>本地音频 · 精听素材制作</small></div><span class="local">● 全程本机处理</span></header>
+<main>
+ <div class="hero"><div class="hero-copy"><div class="hero-kicker">听力备课 · 从这里开始</div><h1>把音频，准备成一堂听力课。</h1>
+ <p class="intro">选择英文音频，生成带词级时间轴的字幕，再把课堂素材带到播放器。</p></div><svg class="hero-art" viewBox="0 0 226 130" fill="none" aria-hidden="true"><rect x="12" y="31" width="169" height="80" rx="24" fill="#E7EEDD"/><circle cx="188" cy="24" r="15" fill="#F2CE7E"/><path d="M188 2v-1m0 46v4m22-27h4m-50 0h-4" stroke="#B99A51" stroke-width="2" stroke-linecap="round"/><g transform="rotate(8 153 75)"><rect x="121" y="27" width="66" height="87" rx="11" fill="#FFFEFB" stroke="#91AD94" stroke-width="2"/><path d="M135 46h36M135 56h25M135 66h30" stroke="#B6C7AD" stroke-width="3" stroke-linecap="round"/><path d="m140 89 7 7 15-17" stroke="#327B68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="24" y="48" width="110" height="53" rx="16" fill="#327B68"/><path d="M41 71v7m10-15v23m10-30v37m10-25v13m10-23v34m10-27v20m10-13v6m10-11v17" stroke="#FCF6EE" stroke-width="3" stroke-linecap="round"/><circle cx="26" cy="23" r="4" fill="#D9B76C"/><path d="m202 88 4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z" fill="#F2CE7E"/></svg></div>
+ <div class="layout">
+  <section class="card" aria-labelledby="createTitle">
+   <div class="card-head"><h2 id="createTitle">新建字幕任务</h2><span class="subtle">01 / 选择音频</span></div>
+   <div id="drop" class="drop" role="button" tabindex="0" aria-label="选择本机音频或拖入音频文件"><div class="file-icon">♪</div><strong id="fileName">拖入一份英文音频</strong><span id="fileHint" class="subtle">或单击这里选择文件</span><small>MP3 / M4A / WAV / AAC · 单文件最大 2 GB</small><input id="file" type="file" accept=".mp3,.m4a,.wav,.aac,audio/*"></div>
+   <progress id="importProgress" hidden max="100" aria-label="导入音频进度"></progress>
+   <details><summary>直接使用本机文件路径</summary><label for="path" class="subtle">填写音频绝对路径，可省去导入副本。</label><input type="text" id="path" placeholder="例如 E:\听力素材\四级_2026-06_第1套_听力.mp3" spellcheck="false"></details>
+   <div class="action-row"><span class="subtle">离线识别 · 自动断句 · 重复校验</span><button class="primary" id="generate" disabled>开始生成字幕</button></div>
+  </section>
+  <section class="card" aria-labelledby="currentTitle">
+   <div class="card-head"><h2 id="currentTitle">当前任务</h2><span id="elapsed" class="subtle"></span></div>
+   <div id="empty" class="empty"><strong>还没有选中任务</strong><span class="subtle">从左侧开始，或在下方选择已有任务。<br>已有成品可直接下载，无需重复生成。</span></div>
+   <div id="current" hidden>
+    <div id="currentName" class="current-name"></div><span id="currentStatus" class="status"></span>
+    <div class="steps" aria-label="处理阶段"><div class="step" id="step0">01 识别与校验</div><div class="step" id="step1">02 词级对齐</div><div class="step" id="step2">03 字幕成品</div></div>
+    <p id="taskInfo"></p><p id="taskError" class="notice" hidden></p>
+    <div class="task-actions"><button id="review">试听与修订</button><a id="download" class="download" href="#" target="_blank" rel="noopener" aria-disabled="true">下载课堂包</a><button id="resume" hidden>恢复生成</button><button id="cancel" class="danger" hidden>取消任务</button></div>
+    <details id="logs"><summary>查看运行日志</summary><button id="refreshLog" class="quiet">刷新日志</button><pre id="logText">展开后可刷新查看。</pre></details>
+   </div>
+  </section>
+ </div>
+ <p id="toast" role="status" aria-live="polite" hidden></p>
+ <section class="card history" aria-labelledby="historyTitle"><div class="card-head"><h2 id="historyTitle">最近任务</h2><button id="refresh" class="quiet">刷新列表 ↻</button></div><div id="history" class="history-list"><p class="subtle">正在读取本机任务…</p></div></section>
+ <div class="foot"><span>课堂包包含同名音频、JSON 和 SRT。教室电脑只需播放器，无需模型。</span><span id="environment">使用现有离线环境</span><button id="doctor" class="quiet">检查运行环境</button></div>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);let state={jobs:[]},selected=null,imported=null,importing=false,requesting=false,lastOperation='',pollErrors=0;
+const names={created:'等待处理',running:'正在处理',completed:'已生成',failed:'处理失败',canceled:'已取消',needs_realign:'等待重新对齐',interrupted:'任务已中断',worker_orphaned:'工作进程尚未退出'};
+function notify(text,error=false){$('toast').hidden=false;$('toast').textContent=text;$('toast').className=error?'error':''}
+async function api(path,body){let r=await fetch('api/'+path,{method:body===undefined?'GET':'POST',headers:body===undefined?{}:{'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body)});let d=await r.json();if(!r.ok)throw Error(d.error||'操作未完成');return d}
+function duration(n){if(!Number.isFinite(n))return '';return Math.floor(n/60)+'分'+Math.floor(n%60)+'秒'}
+function stamp(value){const d=new Date(value);return Number.isNaN(+d)?'':d.toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}
+function busy(){return state.operation?.status==='running'}
+function updateButtons(){$('generate').disabled=importing||requesting||busy()||(!imported&&!$('path').value.trim());$('generate').textContent=importing?'正在导入…':busy()?'正在处理任务…':'开始生成字幕';$('doctor').disabled=busy()||requesting}
+function render(){
+ const op=state.operation;
+ if(op?.job&&op.status==='running')selected=op.job;
+ if(!selected)selected=state.selected||state.jobs[0]?.id||null;
+ const job=state.jobs.find(j=>j.id===selected);
+ $('empty').hidden=!!job||!!(op&&op.status==='running');$('current').hidden=!$('empty').hidden;
+ if(job||op?.status==='running'){
+  const runningOp=op?.status==='running'&&(!op.job||op.job===selected);const status=runningOp?'running':job?.status||'created';
+  $('currentName').textContent=job?.name||(op?.kind==='doctor'?'检查运行环境':'准备新任务');
+  $('currentStatus').textContent=runningOp?op.stage:names[status]||status;
+  $('currentStatus').className='status'+(status==='completed'?' good':['failed','interrupted','worker_orphaned'].includes(status)?' bad':'');
+  let step=status==='completed'?3:job?.stage==='align'?1:0;
+  for(let i=0;i<3;i++)$('step'+i).className='step'+(i<step?' done':i===step&&status==='running'?' on':'');
+  $('taskInfo').textContent=job?(duration(job.duration)+' · '+(status==='completed'?'成品已保存，可试听或下载带走。':'进度按真实处理阶段显示。')):'准备完成后会自动开始识别。';
+  const error=(!runningOp&&job?.status!=='canceled'&&job?.error?.message)||(op?.status==='failed'&&(!op.job||op.job===selected)?op.error:'');
+  $('taskError').hidden=!error;$('taskError').textContent=error||'';
+  $('elapsed').textContent=runningOp?'已用时 '+duration((Date.now()/1000)-op.started):'';
+  $('review').disabled=!job?.has_output||requesting;
+  $('download').setAttribute('aria-disabled',job?.has_output?'false':'true');$('download').href=job?.has_output?'api/download?job='+encodeURIComponent(job.id):'#';
+  $('resume').hidden=!job||!['failed','canceled','needs_realign','interrupted'].includes(status);$('resume').disabled=busy()||requesting;
+  $('cancel').hidden=!job||status!=='running';$('cancel').disabled=requesting;
+ }
+ const list=$('history');list.replaceChildren();
+ if(!state.jobs.length){const p=document.createElement('p');p.className='subtle';p.textContent='暂无任务。选择一份音频，制作第一套课堂素材。';list.append(p)}
+ for(const job of state.jobs){const row=document.createElement('div');row.className='history-row'+(job.id===selected?' selected':'');const main=document.createElement('div');main.className='history-main';const title=document.createElement('div');title.className='history-name';title.textContent=job.name;title.title=job.name;const meta=document.createElement('div');meta.className='history-meta';meta.textContent=[names[job.status]||job.status,duration(job.duration),stamp(job.created)].join(' · ');main.append(title,meta);const button=document.createElement('button');button.textContent=job.id===selected?'已选中':'查看';button.onclick=()=>{selected=job.id;render()};row.append(main,button);list.append(row)}
+ if(state.environment)$('environment').textContent=state.environment.ok?'✓ 环境检查通过':'环境检查未通过';
+ if(op&&op.id!==lastOperation&&op.status!=='running'){lastOperation=op.id;if(op.status==='failed')notify(op.error||'处理失败',true);else if(op.status==='canceled'){imported=null;notify('任务已取消，可在当前任务恢复生成。')}else if(op.kind==='doctor')notify('运行环境检查通过。');else{imported=null;$('fileHint').textContent='本次生成已完成，可选择下一份音频。';notify('字幕已生成，可以试听或下载课堂包。')}}
+ updateButtons();
+}
+async function refresh(){try{state=await api('state');pollErrors=0;render()}catch(e){if(++pollErrors===2)notify('无法连接本机工作台。请确认启动窗口仍在运行，并使用启动窗口中的新网址。',true)}}
+function importFile(file){
+ if(!file||importing||busy())return;
+ if(!/\.(mp3|m4a|wav|aac)$/i.test(file.name)){notify('请选择 MP3、M4A、WAV 或 AAC 音频。',true);return}
+ importing=true;imported=null;$('path').value='';$('fileName').textContent=file.name;$('fileHint').textContent='正在导入本机工作台，数据不会离开这台电脑。';$('importProgress').hidden=false;$('importProgress').value=0;updateButtons();
+ const xhr=new XMLHttpRequest();xhr.open('POST','api/import?name='+encodeURIComponent(file.name));xhr.setRequestHeader('Content-Type','application/octet-stream');
+ xhr.upload.onprogress=e=>{if(e.lengthComputable)$('importProgress').value=e.loaded/e.total*100};
+ function end(){importing=false;$('importProgress').hidden=true;updateButtons()}
+ xhr.onload=()=>{try{const data=JSON.parse(xhr.responseText);if(xhr.status!==200)throw Error(data.error||'导入未完成');imported=data.upload;$('fileHint').textContent=(file.size/1024/1024).toFixed(1)+' MB · 已就绪';notify('音频已就绪，点击“开始生成字幕”。')}catch(e){$('fileHint').textContent='导入未完成，可重新选择';notify(e.message,true)}finally{end()}};
+ xhr.onerror=()=>{end();notify('导入连接中断，请重新选择音频。',true)};xhr.send(file);
+}
+$('drop').onclick=()=>$('file').click();$('drop').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('file').click()}};$('file').onchange=e=>importFile(e.target.files[0]);
+for(const name of ['dragenter','dragover'])$('drop').addEventListener(name,e=>{e.preventDefault();$('drop').classList.add('over')});
+for(const name of ['dragleave','drop'])$('drop').addEventListener(name,e=>{e.preventDefault();$('drop').classList.remove('over')});
+$('drop').addEventListener('drop',e=>{if(e.dataTransfer.files.length!==1){notify('每次请选择一份音频。',true);return}importFile(e.dataTransfer.files[0])});
+window.addEventListener('dragover',e=>e.preventDefault());window.addEventListener('drop',e=>e.preventDefault());
+$('path').oninput=()=>{imported=null;$('fileName').textContent='使用本机文件路径';$('fileHint').textContent='点击开始后检查文件。';updateButtons()};
+async function action(name,body){if(requesting)return;requesting=true;updateButtons();try{await api(name,body);await refresh()}catch(e){notify(e.message,true)}finally{requesting=false;updateButtons()}}
+$('generate').onclick=()=>action('generate',imported?{upload:imported}:{path:$('path').value.trim()});$('resume').onclick=()=>action('resume',{job:selected});$('doctor').onclick=()=>action('doctor',{});
+$('cancel').onclick=()=>action('cancel',{job:selected});
+$('review').onclick=async()=>{const tab=window.open('about:blank','_blank');try{const r=await api('review',{job:selected});if(tab){tab.opener=null;tab.location=r.url}else{notify('浏览器阻止了新窗口，请允许本机页面弹出窗口后重试。')}}catch(e){if(tab)tab.close();notify(e.message,true)}};
+$('refresh').onclick=refresh;$('refreshLog').onclick=async()=>{try{$('logText').textContent=(await api('log?job='+encodeURIComponent(selected))).text}catch(e){notify(e.message,true)}};
+$('download').onclick=e=>{if($('download').getAttribute('aria-disabled')==='true')e.preventDefault()};
+refresh();setInterval(refresh,2000);
+</script>
+</html>
