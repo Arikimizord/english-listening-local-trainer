@@ -87,7 +87,7 @@
   {
     "path": "modules/offline-player/macos/build.command",
     "bytes": 1318,
-    "sha256": "a906e35a82db2ff8200fd871f6c8578ee44dfc0a7f3d7ccce332927c68f82018"
+    "sha256": "895e763d0a53504667e607b22311024eeabdb14da32a6c0378b88592eced9bc2"
   },
   {
     "path": "modules/offline-player/macos/Info.plist",

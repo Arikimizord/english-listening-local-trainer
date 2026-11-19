@@ -31,6 +31,6 @@ xcrun --sdk macosx swiftc -O -parse-as-library -swift-version 5 -target arm64-ap
 plutil -lint "$app/Contents/Info.plist"
 codesign --force --sign - "$app"
 codesign --verify --strict "$app"
-lipo -verify_arch arm64 "$app/Contents/MacOS/CETClassroomPlayer"
+lipo "$app/Contents/MacOS/CETClassroomPlayer" -verify_arch arm64
 mv "$app" "$output"
 echo "$output"
