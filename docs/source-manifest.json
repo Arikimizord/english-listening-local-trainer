@@ -6,8 +6,8 @@
   },
   {
     "path": ".github/workflows/build-macos.yml",
-    "bytes": 1625,
-    "sha256": "427e6bb649ae4dce1a56eca565f298acf819029413e304254d01a89481a4acd7"
+    "bytes": 1839,
+    "sha256": "20165b02d985624b4c1e727e082816180435f290b390708ca5d9c9bc778c03b1"
   },
   {
     "path": ".gitignore",

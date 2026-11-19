@@ -2,13 +2,22 @@ name: Build macOS player
 
 on:
   workflow_dispatch:
+    inputs:
+      runner:
+        description: Apple Silicon build image
+        type: choice
+        options:
+          - macos-26
+          - macos-15
+        default: macos-26
+        required: true
 
 permissions:
   contents: read
 
 jobs:
   build:
-    runs-on: macos-26
+    runs-on: ${{ inputs.runner }}
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
