@@ -1,0 +1,42 @@
+name: Build macOS player
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Validate offline player scripts
+        run: |
+          node --check modules/offline-player/macos/subtitles.js
+          node --check modules/offline-player/macos/player.js
+      - name: Build and package Apple Silicon player
+        shell: bash
+        run: |
+          set -euo pipefail
+          source="modules/offline-player/macos"
+          app_kit="$RUNNER_TEMP/Listening Classroom"
+          web_kit="$RUNNER_TEMP/Listening Classroom Safari"
+          assets="$RUNNER_TEMP/player-assets"
+          mkdir -p "$app_kit" "$web_kit" "$assets"
+          bash "$source/build.command" "$app_kit/听力课堂.app"
+          cp LICENSE ASSETS-LICENSE.md "$source/README.md" "$app_kit/"
+          ditto "$source" "$web_kit"
+          cp LICENSE ASSETS-LICENSE.md "$web_kit/"
+          ditto -c -k --keepParent "$app_kit" "$assets/listening-classroom-macos-arm64.zip"
+          ditto -c -k --keepParent "$web_kit" "$assets/listening-classroom-macos-safari.zip"
+          cd "$assets"
+          shasum -a 256 listening-classroom-macos-arm64.zip listening-classroom-macos-safari.zip > SHA256SUMS.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: listening-classroom-macos
+          path: ${{ runner.temp }}/player-assets
+          if-no-files-found: error

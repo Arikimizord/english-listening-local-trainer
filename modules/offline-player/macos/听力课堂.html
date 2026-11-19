@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; media-src blob:; base-uri 'none'; form-action 'none'">
+  <title>听力课堂</title>
+  <link rel="stylesheet" href="player.css">
+  <script src="subtitles.js" defer></script>
+  <script src="player.js" defer></script>
+</head>
+<body>
+  <main id="player" inert>
+    <header>
+      <div class="identity"><span class="brand">Learn with Adam</span><span>听力课堂</span></div>
+      <div class="files">
+        <button id="folder">打开课堂包</button>
+        <button id="subtitle">选择字幕</button>
+        <button id="open">打开音频</button>
+      </div>
+      <h1 id="filename">拖入 MP3，开始听力课堂</h1>
+    </header>
+    <section class="card" aria-label="字幕" title="拖动或双击文字可选词">
+      <div id="caption">把音频拖到这里
+同名 JSON / SRT 字幕自动加载</div>
+    </section>
+    <div class="timeline">
+      <input id="progress" type="range" min="0" max="1" step="0.01" value="0" aria-label="播放进度" disabled>
+      <output id="clock">00:00 / 00:00</output>
+    </div>
+    <div class="controls primary">
+      <button id="prev">上一句</button><button id="back">−15 秒</button>
+      <button id="play">播放</button>
+      <button id="forward">+15 秒</button><button id="next">下一句</button>
+      <button id="loop" aria-pressed="false">单句循环：关</button>
+    </div>
+    <div class="controls secondary">
+      <button id="visibility" aria-pressed="false">隐藏字幕</button>
+      <button id="autoPause" aria-pressed="false">句末暂停：关</button>
+      <label>速度 <select id="rate">
+        <option value="0.75">0.75×</option><option value="1" selected>1×</option>
+        <option value="1.25">1.25×</option><option value="1.5">1.5×</option>
+      </select></label>
+      <div class="font-controls"><button id="smaller" aria-label="缩小字幕">A−</button>
+      <button id="larger" aria-label="放大字幕">A+</button></div>
+      <label>音量 <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8"></label>
+      <button id="fullscreen">全屏</button>
+    </div>
+    <p id="hint" role="status">空格 播放/暂停 · ← → 切句 · H 字幕 · F11 全屏 · 拖选文字后 ⌘C 复制</p>
+  </main>
+  <div id="splash" aria-hidden="true">
+    <div class="splash-stage">
+      <span class="brand">Learn with Adam</span>
+      <div class="splash-title">听力课堂</div>
+      <p>跟上好奇心，听见每一点进步</p>
+      <div class="race">
+        <div class="running"><div class="cats"></div><div class="mouse"></div></div>
+        <div class="track"><div></div></div>
+        <div class="ticks"><span>0%</span><span>100%</span></div>
+      </div>
+      <div id="percent">0%</div>
+      <p>小猫正在追赶进度…</p>
+    </div>
+  </div>
+  <input id="mediaInput" type="file" accept=".mp3,.m4a,.wav,.aac,.mp4,.json,.srt" multiple hidden>
+  <input id="subtitleInput" type="file" accept=".json,.srt" multiple hidden>
+  <input id="folderInput" type="file" webkitdirectory multiple hidden>
+  <audio id="audio" preload="metadata"></audio>
+</body>
+</html>

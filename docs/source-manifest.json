@@ -1,8 +1,13 @@
 [
   {
     "path": ".gitattributes",
-    "bytes": 144,
-    "sha256": "75a43228c4163a17f17a564793ddb7af060df8411cd8980e32df88c00d081451"
+    "bytes": 186,
+    "sha256": "14ad411f7634a548df68df86427be9b69ec967b5bd0fc4da956df22f025ae9a5"
+  },
+  {
+    "path": ".github/workflows/build-macos.yml",
+    "bytes": 1625,
+    "sha256": "427e6bb649ae4dce1a56eca565f298acf819029413e304254d01a89481a4acd7"
   },
   {
     "path": ".gitignore",
@@ -16,8 +21,8 @@
   },
   {
     "path": "ASSETS-LICENSE.md",
-    "bytes": 1087,
-    "sha256": "b2073d6c119693c3ecf5554b1b1d13fc7f9ec17344d987ef3b35e60357abf6c5"
+    "bytes": 1115,
+    "sha256": "f6d5430af9efb2b5b131e1bde5ca1f982ba8f0cb33acb8d35c4b0b52eaf89d9b"
   },
   {
     "path": "docs/CLI.md",
@@ -31,8 +36,8 @@
   },
   {
     "path": "docs/MAINTENANCE.md",
-    "bytes": 2884,
-    "sha256": "52879baee507984174127a6416c06c27cdb26c663d99d4c5dd974cdb7248b70e"
+    "bytes": 3200,
+    "sha256": "9f1a42299d282c145319caa012620ee95ef4f74e4b9d0454d02bf3c87c9dd6f3"
   },
   {
     "path": "docs/PUBLICATION-REVIEW.md",
@@ -60,19 +65,14 @@
     "sha256": "d11b366000bd3c78a3a580cb31833c01bbccc43e5cb30dd76a420fe1a6b342e6"
   },
   {
-    "path": "modules/offline-player/assets/cats-frames.png",
-    "bytes": 884602,
-    "sha256": "b98116acbdb8d13f0bff36bb9c7893ea6374964c5105e238847efd03559656ce"
-  },
-  {
     "path": "modules/offline-player/assets/running-cats.gif",
     "bytes": 410977,
     "sha256": "14bb74ae0dfa99f579c7096ec54287b22adbb911513635d566a94e155c815700"
   },
   {
     "path": "modules/offline-player/build.ps1",
-    "bytes": 830,
-    "sha256": "c3325c68c07dca2ea3e0bf52fbcf846ba708284244e17c9a934cad110dca8d7c"
+    "bytes": 836,
+    "sha256": "e79c014a7ae3731006c538cd12012b41055c013a7e3ae27bd5076df6dd2194a4"
   },
   {
     "path": "modules/offline-player/dist/听力课堂.exe",
@@ -80,9 +80,54 @@
     "sha256": "8e8c7a826912ed2f1a48e63ffd51ff209fce0311a9c4b180c0798df44774c4d6"
   },
   {
+    "path": "modules/offline-player/macos/assets/cats-frames.png",
+    "bytes": 884602,
+    "sha256": "b98116acbdb8d13f0bff36bb9c7893ea6374964c5105e238847efd03559656ce"
+  },
+  {
+    "path": "modules/offline-player/macos/build.command",
+    "bytes": 1318,
+    "sha256": "453c67793dde35e9f6d037d3c2410121954d5f486a8be8a7820042164e1d9955"
+  },
+  {
+    "path": "modules/offline-player/macos/Info.plist",
+    "bytes": 1220,
+    "sha256": "ddb6d9283a9b791e068b6cf5729b85a54a3b4b4fe2da33fc2f03e82ba70e752b"
+  },
+  {
+    "path": "modules/offline-player/macos/player.css",
+    "bytes": 5235,
+    "sha256": "40fb2028d529e36f63c090b241a4fa5104429b07709e88cee811cbbabe095f26"
+  },
+  {
+    "path": "modules/offline-player/macos/player.js",
+    "bytes": 16641,
+    "sha256": "123cd5bba376d8302ef9a4bf5a237bb4d8a23045b9448ea3b45739968d5b0517"
+  },
+  {
+    "path": "modules/offline-player/macos/Player.swift",
+    "bytes": 15688,
+    "sha256": "d3c1c549278b62f975759237ef840bb11b04b9285ae65a10d935a7c5abc12ac8"
+  },
+  {
+    "path": "modules/offline-player/macos/README.md",
+    "bytes": 2620,
+    "sha256": "b786e0283962d04882e989554a43755cc1d26173368011796734f491f915c0d9"
+  },
+  {
+    "path": "modules/offline-player/macos/subtitles.js",
+    "bytes": 3484,
+    "sha256": "30da28e4bbeee11d33753b9c616095a6bf4cbd01cf96af7960291e4ac963dd02"
+  },
+  {
+    "path": "modules/offline-player/macos/听力课堂.html",
+    "bytes": 3353,
+    "sha256": "fa12ff9c3898ae336cd6c3f9e7d7ea206d16c1c6cc6c7434dbdc0d6afd8ca6c1"
+  },
+  {
     "path": "modules/offline-player/README.md",
-    "bytes": 2242,
-    "sha256": "6c580c05920c9e1b47821e0fb80c3559ff7bbb480058d066d1f9f98de0b5d8f7"
+    "bytes": 2220,
+    "sha256": "802b2104d6e4ecc8ec5269990b4597d22ae949698971201a62fc92cb1fd7a44b"
   },
   {
     "path": "modules/offline-player/src/LoadingScene.cs",
@@ -286,8 +331,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 6074,
-    "sha256": "0b88c22d37328822cb90a6ec39887ba8b963795f2b8e6254dfa6bd463f5bb722"
+    "bytes": 6426,
+    "sha256": "dea3480a3baaffc6d1fd280bb9245a52146459e14bd739725f9bfbb862e326ab"
   },
   {
     "path": "SECURITY.md",
