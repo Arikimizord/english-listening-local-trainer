@@ -87,12 +87,12 @@
   {
     "path": "modules/offline-player/macos/build.command",
     "bytes": 1318,
-    "sha256": "453c67793dde35e9f6d037d3c2410121954d5f486a8be8a7820042164e1d9955"
+    "sha256": "a906e35a82db2ff8200fd871f6c8578ee44dfc0a7f3d7ccce332927c68f82018"
   },
   {
     "path": "modules/offline-player/macos/Info.plist",
     "bytes": 1220,
-    "sha256": "ddb6d9283a9b791e068b6cf5729b85a54a3b4b4fe2da33fc2f03e82ba70e752b"
+    "sha256": "7269075fe6d3745692db8c73e0980221111ea11b8b01d8c6e239ddaa13da06fc"
   },
   {
     "path": "modules/offline-player/macos/player.css",
@@ -106,13 +106,13 @@
   },
   {
     "path": "modules/offline-player/macos/Player.swift",
-    "bytes": 15688,
-    "sha256": "d3c1c549278b62f975759237ef840bb11b04b9285ae65a10d935a7c5abc12ac8"
+    "bytes": 15757,
+    "sha256": "84387f486b4a0ed25214b2098790fb79b4d984e6b6d5f3d5fe592bd173d58258"
   },
   {
     "path": "modules/offline-player/macos/README.md",
-    "bytes": 2620,
-    "sha256": "b786e0283962d04882e989554a43755cc1d26173368011796734f491f915c0d9"
+    "bytes": 2642,
+    "sha256": "7d14ba1ea158166c750cba7c4b24c18b9e17841e420ef94582cc817777416235"
   },
   {
     "path": "modules/offline-player/macos/subtitles.js",

@@ -216,8 +216,10 @@ final class PlayerApp: NSObject, NSApplicationDelegate, NSWindowDelegate, WKScri
                 DispatchQueue.main.async { self?.updateStatus(openedID) }
             }
             clock = media.addPeriodicTimeObserver(forInterval: CMTime(value: 60, timescale: 1000), queue: .main) { [weak self] time in
-                guard let self, self.id == openedID, self.media.rate != 0, time.seconds.isFinite else { return }
-                self.emit("time", ["position": time.seconds])
+                MainActor.assumeIsolated {
+                    guard let self, self.id == openedID, self.media.rate != 0, time.seconds.isFinite else { return }
+                    self.emit("time", ["position": time.seconds])
+                }
             }
             let center = NotificationCenter.default
             notifications.append(center.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: item, queue: .main) { [weak self] _ in

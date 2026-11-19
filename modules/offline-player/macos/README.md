@@ -6,7 +6,7 @@ Apple Silicon 预览版沿用 Windows 版的课堂配色、三秒猫鼠开场和
 
 从 [播放器预览 Release](https://github.com/Arikimizord/english-listening-local-trainer/releases/tag/player-v0.4.0) 下载 Safari 离线包，完整解压后，用 Safari 打开 `听力课堂.html`。使用“打开课堂包”选择包含音频和同名字幕的目录，或把这些文件一起拖入。也可单独打开音频，再点“选择字幕”。一个文件夹若含多份音频，建议直接选择所需音频和对应字幕。
 
-桌面 App 单独提供 arm64 压缩包，采用临时签名。需要直接使用免安装入口时可选择 Safari 离线包。
+桌面 App 单独提供 arm64 压缩包，要求 macOS 14 或更新版本，采用临时签名。需要免安装入口时可选择 Safari 离线包。
 
 ## 构建桌面 App
 

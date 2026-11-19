@@ -26,7 +26,7 @@ mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources/assets"
 cp "$src/听力课堂.html" "$src/player.css" "$src/player.js" "$src/subtitles.js" "$app/Contents/Resources/"
 cp "$src/assets/cats-frames.png" "$app/Contents/Resources/assets/"
 cp "$src/Info.plist" "$app/Contents/"
-xcrun --sdk macosx swiftc -O -parse-as-library -swift-version 5 -target arm64-apple-macosx13.0 \
+xcrun --sdk macosx swiftc -O -parse-as-library -swift-version 5 -target arm64-apple-macosx14.0 \
   "$src/Player.swift" -o "$app/Contents/MacOS/CETClassroomPlayer"
 plutil -lint "$app/Contents/Info.plist"
 codesign --force --sign - "$app"
