@@ -7,7 +7,7 @@ Copyright (c) 2026 Arikimizord. All rights reserved.
 覆盖范围包括：
 - modules/offline-player/assets/running-cats.gif（原始动画）；
 - modules/offline-player/macos/assets/cats-frames.png（Windows 和 Mac 共用的合成帧）；
-- 播放器 EXE、Mac App 和 Safari 离线包中的素材副本；
+- 播放器 EXE、Mac App、Safari 离线包和鸿蒙电脑单文件版中的素材副本；
 - 播放器和 WebUI 中的 Learn with Adam 品牌标识及相关展示。
 
 这些素材随本项目展示；独立提取、改编、品牌使用或其他再授权请联系权利人。MIT 对代码的许可不得被解释为对上述素材的授权。修改或商业分发版本请自行替换品牌及角色资产，或另行取得作者许可。

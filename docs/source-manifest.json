@@ -11,8 +11,8 @@
   },
   {
     "path": ".gitignore",
-    "bytes": 318,
-    "sha256": "ac2faf40a7e6ce0968b97e2343b726cdbc00daa9eb9ecee6834126e61270a151"
+    "bytes": 358,
+    "sha256": "22c5e56a8d46731d89d0647a5f1a47bebaec7f5eb08099b9732095f0bbce813e"
   },
   {
     "path": "AGENTS.md",
@@ -21,8 +21,8 @@
   },
   {
     "path": "ASSETS-LICENSE.md",
-    "bytes": 1115,
-    "sha256": "f6d5430af9efb2b5b131e1bde5ca1f982ba8f0cb33acb8d35c4b0b52eaf89d9b"
+    "bytes": 1140,
+    "sha256": "cae8b23da626e1c62ec016560921c79ee5fc8d0bdd6cb34eac14015334ac1adc"
   },
   {
     "path": "docs/CLI.md",
@@ -36,8 +36,8 @@
   },
   {
     "path": "docs/MAINTENANCE.md",
-    "bytes": 3200,
-    "sha256": "9f1a42299d282c145319caa012620ee95ef4f74e4b9d0454d02bf3c87c9dd6f3"
+    "bytes": 3455,
+    "sha256": "06db3d29b48523a0009c1602716e40981877438085a86a14f00377b663570360"
   },
   {
     "path": "docs/PUBLICATION-REVIEW.md",
@@ -80,6 +80,21 @@
     "sha256": "8e8c7a826912ed2f1a48e63ffd51ff209fce0311a9c4b180c0798df44774c4d6"
   },
   {
+    "path": "modules/offline-player/harmonyos/build.py",
+    "bytes": 3085,
+    "sha256": "f016b8399176136a70a8c461d0e03bcd01fe66baedc773e4837f2751db740b95"
+  },
+  {
+    "path": "modules/offline-player/harmonyos/hash-audio.js",
+    "bytes": 3636,
+    "sha256": "abbe292fa457f0234f6a169e8c3e8013e1cbbe35951cfe1f71c8e36dd1f45a2a"
+  },
+  {
+    "path": "modules/offline-player/harmonyos/README.md",
+    "bytes": 2005,
+    "sha256": "1ffecc0a81ac04fbec5c43013ae906b528c9c4ed456417dacd9a7019ff4d697a"
+  },
+  {
     "path": "modules/offline-player/macos/assets/cats-frames.png",
     "bytes": 884602,
     "sha256": "b98116acbdb8d13f0bff36bb9c7893ea6374964c5105e238847efd03559656ce"
@@ -101,8 +116,8 @@
   },
   {
     "path": "modules/offline-player/macos/player.js",
-    "bytes": 16641,
-    "sha256": "123cd5bba376d8302ef9a4bf5a237bb4d8a23045b9448ea3b45739968d5b0517"
+    "bytes": 16956,
+    "sha256": "2282acd9b5a92f22e2c64ae6e1d4ca3212b2a7a8f96dbbb2d6be3c0b638403cd"
   },
   {
     "path": "modules/offline-player/macos/Player.swift",
@@ -126,8 +141,8 @@
   },
   {
     "path": "modules/offline-player/README.md",
-    "bytes": 2220,
-    "sha256": "802b2104d6e4ecc8ec5269990b4597d22ae949698971201a62fc92cb1fd7a44b"
+    "bytes": 2291,
+    "sha256": "ebd79d59a495ad6b230b5ce5f58814dfa2b9cc923485687ce39d730042467015"
   },
   {
     "path": "modules/offline-player/src/LoadingScene.cs",
@@ -331,8 +346,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 6426,
-    "sha256": "dea3480a3baaffc6d1fd280bb9245a52146459e14bd739725f9bfbb862e326ab"
+    "bytes": 6767,
+    "sha256": "78f189f500544b03c763923fb25549ecf84eaeeecc6200abaa00411124075569"
   },
   {
     "path": "SECURITY.md",

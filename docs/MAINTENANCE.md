@@ -8,6 +8,8 @@
 
 `modules/offline-player/macos` 存放 Mac 播放器、Safari 离线页面和两版共用的开场帧图。Mac 桌面窗口由 `Player.swift` 承载，使用系统 AVFoundation 播放。可手动运行 GitHub Actions 的 `Build macOS player`，获取由 arm64 构建机生成的 App、离线包和 SHA-256 清单。
 
+在播放器模块下执行 `python harmonyos/build.py` 可生成鸿蒙电脑浏览器版。脚本将共享的播放界面、字幕逻辑、动画及鸿蒙版文件校验逻辑内嵌为单个 HTML。生成文件随 Release 分发，仓库跟踪源码。
+
 ## 修改原则
 
 保留音频与配置快照、原子结果、哈希绑定、阶段缓存指纹、任务互斥、受控取消与独立修订版本。新任务的审核状态保持 pending；代码、文本或音频变化后不得静默沿用不匹配词轴。UI 外观更新不能移除按钮 ID、事件行为或字幕选词。

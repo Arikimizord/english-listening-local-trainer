@@ -2,7 +2,9 @@
 
 const $ = id => document.getElementById(id);
 const audio = $("audio");
-const bridge = window.webkit?.messageHandlers?.player;
+const harmony = document.documentElement.dataset.platform === "harmonyos";
+const bridge = harmony ? undefined : window.webkit?.messageHandlers?.player;
+const initialCaption = $("caption").textContent;
 const send = (action, fields = {}) => bridge?.postMessage({action, ...fields});
 const audioExtensions = new Set(["mp3", "m4a", "wav", "aac", "mp4"]);
 const extension = name => name.split(".").pop().toLowerCase();
@@ -77,7 +79,7 @@ function paint(force = false) {
     const cue = cues[active];
     if (!shown) caption.textContent = "字幕已隐藏 · 点击“显示字幕”按钮";
     else if (!cues.length) caption.textContent = key
-      ? "此音频尚未加载字幕" : "把音频拖到这里\n同名 JSON / SRT 字幕自动加载";
+      ? "此音频尚未加载字幕" : initialCaption;
     else if (!cue?.words.length) caption.textContent = cue?.text ?? "…";
     else {
       const fragment = document.createDocumentFragment();
@@ -256,6 +258,10 @@ async function importSubtitles(candidates, mediaId = id, request = ++subtitleReq
             if (!candidate.sha) throw Error(candidate.hashError || "无法验证音频哈希。");
             return candidate.sha;
           }
+          if (harmony) {
+            audioHash ??= hashHarmonyAudio(file);
+            return audioHash;
+          }
           if (!crypto.subtle) throw Error("当前浏览器无法验证音频哈希，请用 Mac App 或 SRT。");
           const selectedFile = file;
           audioHash ??= selectedFile.arrayBuffer().then(bytes => crypto.subtle.digest("SHA-256", bytes))
@@ -341,7 +347,10 @@ audio.addEventListener("loadedmetadata", () => ready(audio.duration));
 audio.addEventListener("play", () => setPlaying(true));
 audio.addEventListener("pause", () => { if (!audio.ended) setPlaying(false); });
 audio.addEventListener("ended", finished);
-audio.addEventListener("error", () => { setPlaying(false); hint("音频无法解码，请检查文件或使用 Mac App。"); });
+audio.addEventListener("error", () => {
+  setPlaying(false);
+  hint(harmony ? "当前浏览器无法解码此音频，请使用标准 MP3 或 WAV。" : "音频无法解码，请检查文件或使用 Mac App。");
+});
 
 function applyFont() { document.documentElement.style.setProperty("--caption-size", size + "px"); }
 applyFont();
@@ -351,7 +360,7 @@ $("next").onclick = () => move(1);
 $("back").onclick = () => seek(position - 15);
 $("forward").onclick = () => seek(position + 15);
 $("open").onclick = () => bridge ? send("open") : $("mediaInput").click();
-$("folder").hidden = !!bridge;
+$("folder").hidden = !!bridge || harmony;
 $("folder").onclick = () => $("folderInput").click();
 $("subtitle").onclick = () => {
   if (!key) { hint("请先打开音频，再选择对应字幕。"); return; }

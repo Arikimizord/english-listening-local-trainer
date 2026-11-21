@@ -24,3 +24,4 @@
 *.ass
 *.flac
 **/examples/local/
+/modules/offline-player/harmonyos/dist/

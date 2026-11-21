@@ -5,6 +5,7 @@
 | 任务 | 入口 |
 |---|---|
 | 在 Mac 上离线精听 | [Apple Silicon 播放器预览版](https://github.com/Arikimizord/english-listening-local-trainer/releases/tag/player-v0.4.0) · [使用说明](modules/offline-player/macos/README.md) |
+| 在鸿蒙电脑上离线精听 | [鸿蒙电脑浏览器版](https://github.com/Arikimizord/english-listening-local-trainer/releases/tag/player-harmonyos-v0.1.0) · [使用说明](modules/offline-player/harmonyos/README.md) |
 | 在 Windows 上离线精听 | [Windows x64 播放器](https://github.com/Arikimizord/english-listening-local-trainer/releases/download/models-v1/listening-classroom-windows-x64.exe) · [使用说明](modules/offline-player/README.md) |
 | 在 Windows 上制作和修订字幕 | [字幕工作台](modules/subtitle-workstation/README.md) · [固定模型包](https://github.com/Arikimizord/english-listening-local-trainer/releases/tag/models-v1) |
 
@@ -28,7 +29,7 @@
 
 ## 为什么分成两个模块
 
-**备课电脑负责制作，教室电脑负责播放。** Windows 字幕工作台使用固定模型及 NVIDIA GPU。Windows 与 Apple Silicon 播放器通过同名音频、JSON 和 SRT 接收课堂包，支持离线使用。
+**备课电脑负责制作，教室电脑负责播放。** Windows 字幕工作台使用固定模型及 NVIDIA GPU。Windows、Apple Silicon 和鸿蒙电脑版播放器通过同名音频、JSON 和 SRT 接收课堂包，支持离线使用。
 
 推荐场景：教师提前在有 GPU 的电脑上生成字幕并试听修订，再将课堂包复制到离线教室电脑；学生使用已准备好的课堂包逐句精听、循环与变速训练。也适合强调音频留在本机的个人备课工作流。
 
@@ -42,11 +43,12 @@ modules/
     scripts/            # 生产代码、安装/下载工具及契约测试
     config/             # 锁定依赖与模型 revision/哈希
     planning/           # 仅保留 doctor 需要的包版本基线，不包含主机记录
-  offline-player/       # Windows 与 Apple Silicon 离线播放器
+  offline-player/       # Windows、Apple Silicon 和鸿蒙电脑离线播放器
     src/                # Windows WPF 源码
     assets/             # 原始猫动画，权利保留
     dist/               # Windows x64 EXE
     macos/              # Safari 离线版、arm64 App 源码与共用开场帧图
+    harmonyos/          # 鸿蒙电脑单文件打包工具、文件哈希校验及使用说明
     build.ps1           # 使用系统 .NET Framework 编译器构建
 examples/               # 当前一套真题示范的本地导入说明，不含媒体
 docs/                  # 架构、使用、重建与发布审查
@@ -54,7 +56,7 @@ docs/                  # 架构、使用、重建与发布审查
 
 ## 两个模块怎么用
 
-在 Windows 上打开 `modules/offline-player/dist/听力课堂.exe`。在 Mac 上可使用 [Apple Silicon App 或 Safari 离线版](modules/offline-player/macos/README.md)。拖入音频和同名字幕开始训练。两版都支持词轴高亮、选词、字幕显隐、倍速、音量、单句循环、句末暂停、切句与全屏。
+在 Windows 上打开 `modules/offline-player/dist/听力课堂.exe`。Mac 可使用 [Apple Silicon App 或 Safari 离线版](modules/offline-player/macos/README.md)。鸿蒙电脑用华为浏览器打开 [单文件离线播放器](modules/offline-player/harmonyos/README.md)。导入音频和同名字幕即可开始训练。
 
 字幕工作台：需先按重建文档准备私有运行环境与固定模型，再双击 `modules/subtitle-workstation/字幕工作站.cmd`。网页只绑定本机随机会话地址；导入音频或填写本地路径，生成后试听修订，下载课堂包并复制到播放器。启动时不自动下载模型。
 
